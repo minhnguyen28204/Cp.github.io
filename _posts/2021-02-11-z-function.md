@@ -12,7 +12,7 @@ Z algorithm hay còn gọi là Z function, là thuật toán áp dụng cho các
 Cho một chuỗi S có độ dài n, Z function sẽ tạo ra mảng Z mà tại mỗi vị trí i ta có Zi là độ dài chuỗi con dài nhất là tiền tố của S bắt đầu tại Si. Độ phức tạp là O(n).
 ## Ý tưởng
 Tham khảo ở VNOI.
-[ZFunction](https://https://vnoi.info/wiki/translate/codeforces/z-algo.md)
+[ZFunction](https://vnoi.info/wiki/translate/codeforces/z-algo.md)
 ## Cài đặt
 ```C++
 z[1] = 0;
