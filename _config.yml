@@ -23,7 +23,7 @@ navbar-links:
 avatar: "/assets/img/avatar-icon.png"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
-round-avatar: false
+round-avatar: true
 
 # If you want to have an image logo in the top-left corner instead of having the title of the website,
 # then specify the following parameter
@@ -36,7 +36,7 @@ round-avatar: false
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   email: "nhhminh2k4@gmail.com"
-  facebook: Nguyễn Minh
+  facebook: humada.minh2k4
   github: minhnguyen28204
   #twitter: daattali
   #patreon: DeanAttali
@@ -60,7 +60,7 @@ social-network-links:
 
 # If you want to show a link to an RSS in the footer, add the site description here.
 # If you don't want to show an RSS link, remove the following line.
-rss-description: This website is a virtual proof that I'm awesome
+rss-description: Không có giải quốc gia thì đi bán vé số !!!
 
 # --- General options --- #
 
