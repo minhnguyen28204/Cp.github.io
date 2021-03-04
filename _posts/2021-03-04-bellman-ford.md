@@ -1,7 +1,7 @@
 ---
 layout : post
 title : Bellman Ford Algorithm
-tags : [shortest_path;graph]
+tags : [shortest path,graph]
 comments : true
 ---
 
