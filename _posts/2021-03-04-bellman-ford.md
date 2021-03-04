@@ -63,4 +63,16 @@ for(int i=1; i<n; i++)
 
 Độ phức tạp thuật toán là O(nm).
 
+## Chu trình có trọng số âm
+ 
+Thuật toán Bellman Ford cũng có thể dùng để kiểm tra nếu đồ thị có chu trình âm. Ví dụ như đồ thị sau 
+
+![image](https://user-images.githubusercontent.com/69662229/109980035-5b245f80-7cb4-11eb-9c5f-0be7044ac22e.png)
+
+có chứa chu trình âm 2 -> 3 -> 4 -> 2 với trọng số là -4
+
+Nếu mà đồ thị có chứa chu trình âm, chúng ta có thể giảm khoảng cách vô hạn lần bằng cách lặp lại chu trình âm. Vì thế khoảng cách ngắn nhất không có nghĩa trong trường hợp này.
+
+Một chu trình âm có thể phát hiện bằng cách thực hiện thuật toán n lần. Trong lần thực hiện thứ n, nếu nó giảm đi một khoảng cách bất kì thì đồ thị có chứa 1 chu trình âm. Chú ý rằng thuật toán này có thể dùng để tìm kiếm chu trình âm trong toàn đồ thị bất kể đỉnh xuất phát nào.
+
 ###### source from competitive programing handbook.
