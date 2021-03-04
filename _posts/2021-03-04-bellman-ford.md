@@ -75,4 +75,10 @@ Nếu mà đồ thị có chứa chu trình âm, chúng ta có thể giảm kho�
 
 Một chu trình âm có thể phát hiện bằng cách thực hiện thuật toán n lần. Trong lần thực hiện thứ n, nếu nó giảm đi một khoảng cách bất kì thì đồ thị có chứa 1 chu trình âm. Chú ý rằng thuật toán này có thể dùng để tìm kiếm chu trình âm trong toàn đồ thị bất kể đỉnh xuất phát nào.
 
+## Practise
+
+[Cycle Finding](https://cses.fi/problemset/task/1197/)
+
+[High Score](https://cses.fi/problemset/task/1673/)
+
 ###### source from competitive programing handbook.
