@@ -1,4 +1,11 @@
-## Bellman-Ford Algorimth
+---
+layout : post
+title : Bellman Ford Algorithm
+tags : [shortest_path]
+comments : true
+---
+
+## Bellman-Ford Algorithm
 Thuật toán Bellman-Ford được sử dụng để tìm đường đi ngắn nhất từ một đỉnh xuất phát đến mọi đỉnh khác nó. Thuật toán có thể áp dụng được cho mọi loại
 đồ thị kể cả đồ thị không chứa chu trình âm. Nếu đồ thị chứa chu trình âm, thuật toán này có thể phát hiện nó.
 
