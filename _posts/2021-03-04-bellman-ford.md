@@ -41,25 +41,21 @@ Ví dụ: Min dis từ đỉnh 1 đến đỉnh 5 là đường đi như sau:
 
 Dữ liệu được lưu trữ trong 1 struct trong đó u, v là hai đỉnh và w là khoảng cách giữa hai đỉnh đó.
 
-``` C++
+    for(int i=1; i<=n; i++) d[i] = inf;
+    d[x] = 0;
+    //khoi tao gia tri cho cac nut
 
-for(int i=1; i<=n; i++) d[i] = inf;
-d[x] = 0;
-//khoi tao gia tri cho cac nut
-
-for(int i=1; i<n; i++)
-{
-  //m là số lượng các cạnh của đồ thị
-  for(int j=1; j<=m; j++)
-  {
-    int u = a[j].u;
-    int v = a[j].v;
-    int w = a[j].w;
-    d[v] = min(d[v],d[u]+w);
-  }
-}
-
-```
+    for(int i=1; i<n; i++)
+    {
+      //m là số lượng các cạnh của đồ thị
+      for(int j=1; j<=m; j++)
+      {
+        int u = a[j].u;
+        int v = a[j].v;
+        int w = a[j].w;
+        d[v] = min(d[v],d[u]+w);
+      }
+    }
 
 Độ phức tạp thuật toán là O(nm).
 
