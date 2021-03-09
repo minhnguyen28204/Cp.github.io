@@ -48,3 +48,5 @@ f[i][j] += f[i-1][j] nếu (i-1 >= 0 && blockx[i-1][i][j])
 f[i][j] += f[i][j-1] nếu (j-1 >= 0 && blocky[j-1][j][i])
 
 Kết quả là f[width][height]
+
+Ai đó chỉ tôi cách nộp bài trên TopCoder đi ._.
