@@ -136,7 +136,7 @@ Kết quả là max f[i][m]
 
 **4. LIS**
 
-#### Sử dụng chặt nhị phân 
+###### Sử dụng chặt nhị phân 
 
 Công thức ở bài LIQ: f[i] = f[j] + 1 (nếu a[j] < a[i])
 
@@ -152,7 +152,7 @@ b là dãy tăng nên ta sử dụng chặt nhị phân để tìm kiếm:
  
  Độ phức tạp là O(nlogn)
 
-### Sử dụng BIT (binary index tree)
+###### Sử dụng BIT (binary index tree)
 
 Nếu gán b(a[i]) = f(i), mảng b(x) có ý nghĩa là độ dài dãy con tăng dài nhất kết thúc tại phần tử có giá trị là x.
 
