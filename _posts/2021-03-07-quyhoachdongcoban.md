@@ -116,17 +116,17 @@ Có thể dễ dàng thấy đây là một bài Dijkstra cơ bản, tuy nhiên 
 
 (Ctrl + f -> search tên bài)
 
-1. LIQ
+**1. LIQ**
 
 f[i] = f[j] + 1 nếu a[j] < a[i].
 
-2. NKTICK
+**2. NKTICK**
 
 f[1] = a[1]
 f[2] = min(f[1]+a[2],r[1])
 f[i] = min( f[i-1]+a[i] , f[i-2]+r[i-1] )
 
-3. QBMAX
+**3. QBMAX**
 
 f[i][j] là cách đi sao cho đến ô (i,j) đạt giá trị max.
 
@@ -134,7 +134,7 @@ f[i][j] = max(f[i-1][j-1]+a[i][j], max(f[i][j]+a[i][j], f[i+1][j-1]+a[i][j]) )
 
 Kết quả là max f[i][m]
 
-4. LIS
+**4. LIS**
 
 #### Sử dụng chặt nhị phân 
 
@@ -162,7 +162,7 @@ Nếu gán b(a[i]) = f(i), mảng b(x) có ý nghĩa là độ dài dãy con tă
 
 Nếu giới hạn quá lớn thì ta nén số lại và tính.
 
-5. LATGACH
+**5. LATGACH**
 
 Bài này là số fibanacci, f[i] = f[i-2] + f[i-1].
 
