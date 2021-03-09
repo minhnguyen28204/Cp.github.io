@@ -33,3 +33,16 @@ Ngược lại f[i] = f[i-1];
 
 Nếu (ithinclu[n] = 1 && oneinclu[n] = 1) thì kết quả là max( max(f[n-1], f[n]-a[n]), f[n]-a[1])
 Nếu không kq = f[n]
+
+## Intermediate
+**1.AvoidRoads**
+
+Gọi f[i][j] là số cách đi đến tọa độ (i,j)-> f[0][0] = 1
+
+blockx[i][j][k] = true nếu đang ở cột k và đi được từ hàng i đến j
+blocky[i][j][k] = true nếu đang ở hàng k và đi được từ cột i đến j
+
+f[i][j] += f[i-1][j] nếu (i-1 >= 0 && blockx[i-1][i][j])
+f[i][j] += f[i][j-1] nếu (j-1 >= 0 && blocky[j-1][j][i])
+
+Kết quả là f[width][height]
