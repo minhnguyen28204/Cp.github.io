@@ -50,3 +50,55 @@ f[i][j] += f[i][j-1] nếu (j-1 >= 0 && blocky[j-1][j][i])
 Kết quả là f[width][height]
 
 Ai đó chỉ tôi cách nộp bài trên TopCoder đi ._.
+
+**2.ChessMetric**
+
+Gọi f[i][j][k] là số cách đi từ ***start*** đến (i,j) trong k bước.
+
+Ta dùng thuật toán dfs để tính giá trị f[i][j][k]
+
+stx, sty là tọa độ điểm xuất phát; enx, eny là tọa độ điểm kết thúc. f[stx][sty][0] = 1
+
+dfs(x,y,timed) với tọa độ (x,y) và đang trong timed bước
+
+tại x, y ta đi tới các tọa độ liền kề (sài mảng để lưu giá trị các bước kế tiếp), với u, v là tọa độ mới ta có f[u][v][timed+1] += f[x][y][timed];
+
+Nếu u, v chưa thăm thì thăm
+
+Sau khi thăm xong 1 đinh thì đánh vst bằng false lại.
+
+Kết quả là f[enx][eny][num]
+
+```
+
+void dfs(int x, int y, int timed)
+
+{
+
+    vst[x][y] = true;
+
+    for(int i=0; i<16; i++)
+    
+    {
+    
+        int u = x + dx[i];
+        
+        int v = y + dy[i];
+        
+        if (ok(u,v))
+        
+        { 
+        
+            f[u][v][timed+1] += f[x][y][timed];
+            
+            if (!vst[u][v]) dfs(u,v,timed+1);
+            
+        }
+        
+    }
+    
+    vst[x][y] = false;
+    
+}
+
+```
