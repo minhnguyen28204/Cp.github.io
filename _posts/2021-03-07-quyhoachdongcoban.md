@@ -102,3 +102,68 @@ void dfs(int x, int y, int timed)
 }
 
 ```
+
+## Upper-Intermediate
+Cho đồ thị vô hướng G có trọng số dương và N đỉnh.
+
+Ban đầu bạn có số tiền là M. Để đi qua đỉnh i, bạn phải trả số tiền là S[i]. Và đương nhiên, nếu không đủ tiền thì bạn không đi được. Tìm đường đi ngắn nhất từ 1 tới N thỏa mãn tiêu chí trên. Nếu có nhiều đường ngắn nhất, in ra đường với chi phí nhỏ nhất. Giới hạn: 1<N≤100; 0≤M≤100; 0≤S[i]≤100.
+
+Có thể dễ dàng thấy đây là một bài Dijkstra cơ bản, tuy nhiên chỉ khác ở chỗ nó có thêm một điều kiện. Trong bài toán Dijkstra cơ bản ta có Min[i] , là độ dài đường đi ngắn nhất từ 1 tới i. Còn ở đây, chúng ta cần phải quan tâm đến số tiền còn lại. Do đó chúng ta có thể mở rộng mảng này thành Min[i][j] , là độ dài đường đi ngắn nhất tới i, và còn lại số tiền là j. Bằng cách này bài toán đã được đưa về bài toán Dijkstra quen thuộc. Tại mỗi bước ta tìm trạng thái (i,j) có quãng đường ngắn nhất, đánh dấu là đã thăm rồi update cho các trạng thái cạnh nó. Đáp án sẽ là Min[N][j] có giá trị nhỏ nhất (và j lớn nhất trong số các Min[N][j] có cùng giá trị).
+
+-> Bài Roads trên Vnoi
+
+# Giải bài qhđ trên Vnoi.
+
+(Ctrl + f -> search tên bài)
+
+1. LIQ
+
+f[i] = f[j] + 1 nếu a[j] < a[i].
+
+2. NKTICK
+
+f[1] = a[1]
+f[2] = min(f[1]+a[2],r[1])
+f[i] = min( f[i-1]+a[i] , f[i-2]+r[i-1] )
+
+3. QBMAX
+
+f[i][j] là cách đi sao cho đến ô (i,j) đạt giá trị max.
+
+f[i][j] = max(f[i-1][j-1]+a[i][j], max(f[i][j]+a[i][j], f[i+1][j-1]+a[i][j]) ) 
+
+Kết quả là max f[i][m]
+
+4. LIS
+
+#### Sử dụng chặt nhị phân 
+
+Công thức ở bài LIQ: f[i] = f[j] + 1 (nếu a[j] < a[i])
+
+Trong công thức trên nếu ta gán hàm b(f[i]) = a[i] thì ta sẽ có mảng b với ý nghĩa: b(k) là giá trị kết thúc tại dãy con tăng có độ dài là k.
+
+Giả sử đang duyệt tới vị trí i và f[i] = k. Ta gán b(k) = a[i] như trên, nếu có b(k) >= b(k+1) thì ta đã tính sai f(i), vì trước a[i] có 1 phần tử a[j] < a[i] mà f[j] > f[i].
+
+b là dãy tăng nên ta sử dụng chặt nhị phân để tìm kiếm:
+
+ -Khởi tạo dãy b có n phần tử, b(0) = -oo, các phần tử khác bằng +oo.
+
+ -Duyệt i từ 1 đến n, mỗi lần duyệt tìm vị trí k đầu tiên có b(k) >= a[i]. Gán b(k) = a[i] (f[i]=k)
+ 
+ Độ phức tạp là O(nlogn)
+
+### Sử dụng BIT (binary index tree)
+
+Nếu gán b(a[i]) = f(i), mảng b(x) có ý nghĩa là độ dài dãy con tăng dài nhất kết thúc tại phần tử có giá trị là x.
+
+Để tính f(i) ta cần tìm max từ giá trị 0 -> a[i]-1, sau đó gán f(i) = max + 1 và cập nhập b(a[i]). Sử dụng BIT để tìm max và cập nhập.
+
+Độ phức tạp là O(nlogC) trong đó C là giới hạn giá trị của a[i].
+
+Nếu giới hạn quá lớn thì ta nén số lại và tính.
+
+5. LATGACH
+
+Bài này là số fibanacci, f[i] = f[i-2] + f[i-1].
+
+Còn why nó là số fibonacci thì xem ở đây ._. [Youtube](https://www.youtube.com/watch?v=ucbH-tga7U4&t=464s) (mấy ông Ấn Độ giỏi vlin :vv)
