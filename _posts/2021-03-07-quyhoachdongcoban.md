@@ -167,3 +167,40 @@ Nếu giới hạn quá lớn thì ta nén số lại và tính.
 Bài này là số fibanacci, f[i] = f[i-2] + f[i-1].
 
 Còn why nó là số fibonacci thì xem ở đây ._. [Youtube](https://www.youtube.com/watch?v=ucbH-tga7U4&t=464s) (mấy ông Ấn Độ giỏi vlin :vv)
+
+**6. VSTEPS**
+
+f[1] = 1
+
+f[i] += f[i-2] (nếu i-2 không bị hư)
+
+f[i] += f[i-1] (nếu i-1 không bị hư)
+
+**7. NKPALINS**
+
+Ta đảo xâu lại và tìm xâu con chung dài nhất của hai xâu
+
+- Nếu a[i] = b[j] thì f[i][j] = f[i-1][j-1] + 1
+- Không thì f[i][j] = max(f[i-1][j],f[i][j-1])
+
+Truy vết:
+
+- i = n, j = n;
+- Nếu a[i]=b[j] thì a[i] có trong xâu kết quả, i--, j--.
+- Nếu f[i][j] = f[i-1][j] thì i--
+- Nếu f[i][j] = f[i][j-1] thì j--
+
+**8. BONES**
+
+f[i] là số lần tổng i xuất hiện (i <= 80)
+
+for i = 1 to S1
+
+for j = 1 to S2
+
+for k = 1 to S3
+
+f[i+j+k]++;
+            
+Kết quả là i (với i là max (f[i]))
+
