@@ -204,3 +204,23 @@ f[i+j+k]++;
             
 Kết quả là i (với i là max (f[i]))
 
+**9. NKCABLE**
+
+f[i] là cách nối từ máy thứ 1 -> máy thứ i
+
+f[0] = 0;
+f[1] = +oo (vì có 1 máy thì không thể nối được)
+f[i] = min(f[i-1],f[i-2]) + a[i-1]
+
+**10. NKREZ**
+
+Sắp xếp các cuộc họp theo thứ tự thời gian kết thúc tăng dần (ki < kj với i < j)
+
+Gọi f[i] là tổng thời gian lớn nhất mà hội trường được sử dụng qua i cuộc họp đầu
+
+f[i] = f[i-1] nếu cuộc họp thứ i không được chọn.
+
+Nếu chọn cuộc họp thứ i, vì mảng f là mảng tăng dần nên ta cần tìm vị trí j lớn nhất sao cho kj < pi -> f[j] + pi - kj = f[i].
+
+Sử dụng chặt nhị phân để tìm vị trí j.
+
