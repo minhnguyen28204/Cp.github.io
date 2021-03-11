@@ -317,3 +317,26 @@ Với mỗi số dấu bé hơn, ta cần tìm số cách đặt dấu bé (tín
 Tính trước mảng f[i][j] như bài 15, tính thêm một mảng g[i] là số cách sắp xếp i phần tử ( g[i] = i! )
 
 Kết quả là ans = 1 (toàn bộ là dấu bằng) + f[n] (chỉ có 1 dấu bé) + dp[n][k] * f[k] (với k là số dấu bé, 2 <= k < n)
+
+**17. DTDOI**
+
+Do max(S) = 1e9 còn sum(a[i]) = 10000 nên ta sẽ tham lam chọn thằng lớn nhất cho đến khi S < sum(a[i]), cho lớn hơn tí là 20000, add là số tờ tiền lớn nhất được chọn.
+
+Gọi f[i] là số đồng tiền ít nhất cần chọn để tạo thành tổng i.
+
+Với mỗi a[j] <= i ta sẽ kiểm tra và lấy min -> f[i] = min(f[i], f[i-a[j]]+1)
+
+Kết quả là f[i] + add.
+
+**18. THEME**
+Lợi dụng những đặc điểm sau để thiết kế giải thuật duyệt bình thường vẫn Full Test ngon lành :
+
+- Đoạn cao trào phải có từ 5 nốt nhạc trở lên.
+- Những lần xuất hiện của đoạn không được chồng lên nhau ( không có nốt nhạc chung ).
+
+Cho biến i chạy theo khoảng cách giữa 2 nốt thuộc đoạn cao trào này vào hai nốt thuộc đoạn cao trào kia. Vì đề chỉ yêu cầu đoạn cao trào có số lần xuất hiện > 2 nên chỉ cần xét hai đoạn cao trào là đủ. Không nhất thiết phải tuân thủ theo nguyên tắc “chệnh lệch độ cao giữa hai nốt liên tiếp thì chắc chắn giống”, ta vẫn có thể nhận ra rằng 2 nốt cùng vị trí thuộc hai đoạn cao trào khác nhau có độ chênh lệch không đổi. Ta sẽ sử dụng nó làm điều kiện đánh giá. Cho biến j chạy theo vị của nốt nhạc thuộc đoạn cao trào thứ 1 và nốt cùng vị trí thuộc đoạn cao trào thứ 2 sẽ là i + j. So sánh độ chênh lệch nếu phù hợp thì tăng biến đến. Nếu không phù hợp thì khởi tạo lại biến đếm và độ chênh lệch. Lưu ý luôn cập nhật giá trị max từ biến đếm thường xuyên.
+
+*DYNAMIC WAYS WILL BE RELEASED LATER :D*
+
+**19. ELEVATOR**
+
