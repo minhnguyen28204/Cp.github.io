@@ -305,3 +305,15 @@ f[i][j] += f[i-1][j-1] (Cộng thêm số cách chia i-1 phần tử đầu thà
 kết quả là f[n][k], pre_calculated rồi truy vấn thôi.
 
 *bài này dell có trên cf à =(((, voj như lìn ấy*
+
+**16. COND**
+
+Ta có thể suy nghĩ bài này theo 1 hướng khác, đó là chia các phần tử thành các tập chứa dấu bằng và đặt dấu bé giữa các tập hợp đó, (a1 = a2 = ...) < (ai = ai+1 = ...) < ...
+
+Bài toán quy về số cách chia i phần tử thành j nhóm, kết quả ta chỉ cần for số nhóm (số dấu bé hơn) và cộng lại.
+
+Với mỗi số dấu bé hơn, ta cần tìm số cách đặt dấu bé (tính như bài 15 ở trên) và với mỗi cách đặt dấu sẽ có số cách đặt các phần từ (là n!).
+
+Tính trước mảng f[i][j] như bài 15, tính thêm một mảng g[i] là số cách sắp xếp i phần tử ( g[i] = i! )
+
+Kết quả là ans = 1 (toàn bộ là dấu bằng) + f[n] (chỉ có 1 dấu bé) + dp[n][k] * f[k] (với k là số dấu bé, 2 <= k < n)
