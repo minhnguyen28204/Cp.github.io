@@ -291,3 +291,17 @@ Nếu f[k+1][s] = +oo thì không có cách chọn điểm thỏa mãn.
 Nếu có cách chọn, ta truy vết để tìm kết quả:
 
 k++, khi mà s != 0 thì push(f[k][s]) vào stack rồi lấy s -= f[k--][s] (tức là push f[k-1][s-f[k][s ban đầu]])
+
+**15. BCDIV**
+
+Gọi f[i][j] là số cách chia i phần tử đầu thành j nhóm
+
+f[0][0] = 1 
+
+f[i][j] = f[i-1][j] * j (số cách chia i-1 phần tử đầu vào j nhóm, giờ có thêm phần tử thứ i thì ta có thể bỏ i vô từng j nhóm)
+
+f[i][j] += f[i-1][j-1] (Cộng thêm số cách chia i-1 phần tử đầu thành j-1 nhóm, phần tứ thứ i là nhóm thứ j)
+
+kết quả là f[n][k], pre_calculated rồi truy vấn thôi.
+
+*bài này dell có trên cf à =(((, voj như lìn ấy*
