@@ -329,6 +329,7 @@ Với mỗi a[j] <= i ta sẽ kiểm tra và lấy min -> f[i] = min(f[i], f[i-a
 Kết quả là f[i] + add.
 
 **18. THEME**
+
 Lợi dụng những đặc điểm sau để thiết kế giải thuật duyệt bình thường vẫn Full Test ngon lành :
 
 - Đoạn cao trào phải có từ 5 nốt nhạc trở lên.
