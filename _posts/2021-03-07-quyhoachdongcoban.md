@@ -266,5 +266,28 @@ Kết quả là f[n] (nhớ lấy mod)
 
 **13. PTRANG**
 
+Gọi f[i] là số cách chia các từ vào dòng sao cho hệ số phạt là min.
 
+Để tính f[i] ta chỉ cần xét mọi vị trí j trước i sao cho tổng độ dài các chữ từ j đến i không vượt quá l và lấy min
 
+f[i] = min(f[i], max(f[j-1], l - sum(j,i)))
+
+Kết quả là f[n].
+
+**14. V8SCORE**
+
+Gọi a[i][j] là điểm môn thứ i của giám khảo j
+
+Gọi f[i][j] là điểm thứ i-1 được cộng vô khi xét 1->i điểm đầu và tạo thành tổng là j.
+
+f[1][0] = 0 (không có bài thi số 0 và tổng bằng 0)
+
+f[1][j] or f[i][0] = INF
+
+Giả sử ta đang xét tới vị giám khảo thứ x, môn thứ i, tổng điểm tạo thành là j: nếu chọn điểm môn thứ i-1 của giám khảo x thì đầu tiên tổng điểm j phải lớn hơn a[i-1][x]; môn được chọn trước môn i-1 của giám khảo x phải bé hơn, tức là f[i-1][j-a[i-1][x]] <= a[i-1][x] (trong đó f[i-1][j-a[i-1][x]] là môn thứ i-2 được chọn và tạo thành tổng j-a[i-1][x]); và a[i-1][x] < f[i][j] thì f[i][j] = a[i-1][x].
+
+Nếu f[k+1][s] = +oo thì không có cách chọn điểm thỏa mãn.
+
+Nếu có cách chọn, ta truy vết để tìm kết quả:
+
+k++, khi mà s != 0 thì push(f[k][s]) vào stack rồi lấy s -= f[k--][s] (tức là push f[k-1][s-f[k][s ban đầu]])
