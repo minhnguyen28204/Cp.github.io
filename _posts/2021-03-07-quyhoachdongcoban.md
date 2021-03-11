@@ -224,3 +224,47 @@ Nếu chọn cuộc họp thứ i, vì mảng f là mảng tăng dần nên ta c
 
 Sử dụng chặt nhị phân để tìm vị trí j.
 
+**11. QBSQUARE**
+
+Gọi l[i][j] là số số 1 (or số 0) liên tiếp trên hàng i và xét đến cột j
+
+Gọi c[i][j] là số số 1 (or số 0) liên tiếp trên cột j và xét đến hàng i
+
+Gọi f[i][j] là cạnh của hình vuông lớn nhất có góc phải dưới là a[i][j]
+
+- Rõ ràng, nếu a[i][j] != a[i-1][j-1] thì f[i][j] = 1 (hình vuông chỉ có a[i][j])
+
+- Nếu a[i][j] == a[i-1][j-1] thì f[i][j] = min( c[i][j], l[i][j], f[i-1][j-1]+1 ), vì nếu hai ô kế trên và kế dưới khác a[i][j] thì c[i][j] or l[i][j] = 1 -> diện tích hình vuông max chỉ được 1.
+
+![image](https://user-images.githubusercontent.com/69662229/110774412-9ffb4980-8212-11eb-8510-1417943caeba.png)
+
+- Ví dụ hình trên: f[4][4] = min( c[4][4], l[4][4], f[3][3]+1 ) = min(1,1,2) = 1. 
+
+![image](https://user-images.githubusercontent.com/69662229/110774789-084a2b00-8213-11eb-9ff5-b940525cf20b.png)
+
+Hình vẽ tay nên hơi xâu :v 
+
+- Another ex: f[4][4] = min( c[4][4], l[4][4], f[3][3]+1) = min( 2, 4, 1+1) = 2
+
+Tính l[i][j] từ l[i][j-1] như sau : l[i][j] = l[i][j-1] + 1 nếu a[i][j] == a[i][j-1] , nếu không l[i][j] = 1
+
+Tính c[i][j] tương tự.
+
+**12. CNTBULLS**
+
+Cho dãy ban đầu chỉ toàn bò cái, ta sẽ tìm cách thay thế các con bò đực rựa vô sao cho nó ko đánh nhau.
+
+Gọi f[i] là số cách sắp bò đực vào khi xét đến vị trí thứ i.
+
+Nhận thấy rằng nếu i < k+1 thì f[i] = i+1 (có i vị trí để thay và 1 cách là không cho thằng đực rựa nào vào hết)
+
+-> f[i] = f[i-1] + 1 (số cách sắp tối đa ở i-1 con đầu và thêm 1 cách là con ở vị trí thứ i)
+
+Còn nếu i >= k+1 thì f[i] = f[i-1] + f[i-k-1] tức là số cách sắp tối đa của i-1 con đầu và cộng thêm số cách sắp tối đa của i-k-1 con đầu (vì con thứ i-k-1 không đánh nhau với con i :D)
+
+Kết quả là f[n] (nhớ lấy mod)
+
+**13. PTRANG**
+
+
+
