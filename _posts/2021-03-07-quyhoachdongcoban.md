@@ -326,7 +326,7 @@ Gọi f[i] là số đồng tiền ít nhất cần chọn để tạo thành t�
 
 Với mỗi a[j] <= i ta sẽ kiểm tra và lấy min -> f[i] = min(f[i], f[i-a[j]]+1)
 
-Kết quả là f[i] + add.
+Kết quả là f[s] + add.
 
 **18. THEME**
 
