@@ -341,3 +341,21 @@ Cho biến i chạy theo khoảng cách giữa 2 nốt thuộc đoạn cao trào
 
 **19. ELEVATOR**
 
+Gọi f[i][j] là mảng lưu kết quả khi xét đến loại đá i có độ cao j.
+
+Sắp xếp lại dữ liệu theo a tăng dần.
+
+Đầu tiên ta duyệt qua các loại đá, với mỗi loại đá ta duyệt j theo độ cao tối đa của loại đá đó, rồi ta duyệt k số lượng của loại đá đó.
+
+Nếu độ cao khi xếp k viên đó loại i <= độ cao tối đa của i (tức là k * h[i] <= a[i]) và độ cao tối đa trừ đi độ cao của k viên đá <= độ cao tối đa của viên đá thứ i-1 ( tức là -k* h[i] + j <= a[i-1] ) thì ta sẽ kiểm tra k khối đá đó và lấy max -> f[i][j] = max(f[i][j], f[i-1][j-k * h[i]] + k * h[i]. 
+
+Kết quả là max f[n][j].
+
+**20. NKPATH**
+
+Bài này dễ thôi, dộng thẳng 4 vòng for mà làm ._. (100^4)
+
+For p q rồi for i j r kiểm tra nếu ô (i,j) có đến được ô(p,q) hay không, nếu đến được thì f[p][q] += f[i][j]
+
+Kết quả là sum(f[i][n])
+
