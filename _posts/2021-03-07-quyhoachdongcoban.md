@@ -359,3 +359,12 @@ For p q rồi for i j r kiểm tra nếu ô (i,j) có đến được ô(p,q) ha
 
 Kết quả là sum(f[i][n])
 
+**21. SPSEQ**
+
+Gọi f[i] là độ dài dãy con tăng dài nhất khi xét từ 1 đến i.
+
+Gọi g[i] là độ dài dãy con tăng dài nhất khi xét từ n đến i.
+
+Tính f[i] và g[i] như bài LIS (đảo ngược mảng a lại và tính g[i])
+
+Vì dãy cần tìm gồm hai dãy con, tăng ở nửa đầu và giảm ở nửa cuối, nên ta chỉ cần tìm vị trí i sao cho min(f[i], g[j]) * 2 - 1 là max. (với j là vị trí trùng với i khi xét từ n)
