@@ -1,6 +1,6 @@
 ---
 layout : post
-title : Kiến thức đồ thị 
+title : Đồ thị 
 comments : true
 tags : [graph]
 ---
