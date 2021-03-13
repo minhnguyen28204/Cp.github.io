@@ -367,4 +367,32 @@ Gọi g[i] là độ dài dãy con tăng dài nhất khi xét từ n đến i.
 
 Tính f[i] và g[i] như bài LIS (đảo ngược mảng a lại và tính g[i])
 
-Vì dãy cần tìm gồm hai dãy con, tăng ở nửa đầu và giảm ở nửa cuối, nên ta chỉ cần tìm vị trí i sao cho min(f[i], g[j]) * 2 - 1 là max. (với j là vị trí trùng với i khi xét từ n)
+![image](https://user-images.githubusercontent.com/69662229/111028667-da005300-83ac-11eb-8ef1-1094f314713b.png)
+
+Như ví dụ trên, giả sử f[i] = 5 còn g[j] = 10 thì ta sẽ lấy đoạn f[i] và thêm 5 đoạn g[j] (chắc chắn sẽ lấy được vì độ dài dãy con tăng dài nhất tại vị trí j là 10 mà) -> kết quả là min(f[i],g[j]) * 2 - 1 (trừ 1 vì nó bị double thằng i).
+
+**22. LQDGONME**
+
+Gọi a[i][j] là phần tử thứ j của hoán vị i.
+
+Gọi f[i] là độ dài dãy con tăng max khi xét đến phần tử a[1][i]
+
+Và d[i][j] là vị trí của phần tử có giá trị bằng j trong hoán vị thứ i
+
+Chọn hoán vị đầu tiên làm hoán vị ban đầu, khi xét đến phần tử thứ i trong hoán vị đầu, điều ta cần làm là xét những phần tử j ở trước nó trong hoán vị. Với mỗi phần tử j, ta xem thứ tự của a[k][i] có lớn hơn a[k][j]  hay không (k <= m). Nếu tất cả các hoán vị đều tuân theo trật tự này. Ta gán f[a(1, i)] = max (f [a(1, i)], f[a(1, j)]+1). Kết quả là max của tấ cả các f.
+
+Cơ sở qhđ : f[i] = 1.
+
+*stolen from cowboycoder :D*
+
+**23. QBPAL**
+
+Gọi f[i][j] là số xâu palindrome trong đoạn i -> j
+
+- Ban đầu số xâu palindrome của f[i][j] sẽ bằng f[i+1][j] + f[i][j-1] - f[i+1][j-1]
+- Nếu s[i]=s[j] thì f[i][j] += f[i+1][j-1]+1.
+
+Bài này là BigNum :), skip.
+
+**24. NKH**
+
