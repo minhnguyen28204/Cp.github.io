@@ -396,3 +396,58 @@ Bài này là BigNum :), skip.
 
 **24. NKH**
 
+Bài này làm theo đệ quy ngon lành, gọi thủ tục bktr(i,j,k) với i là vị trí hiện tại của S1, j là vị trí hiện tại của S2 và k là vị trí hiện tại của S.
+
+Nếu S[k] == S1[i] thì bktr(i+1,j,k+1) 
+
+Nếu S[k] == S2[j] thì bktr(i,j+1,k+1)
+
+Mỗi lần đệ quy tiếp thì lưu vị trí vào một mảng res.
+
+Nếu k=n+1 thì xuất mảng res ra và kết thúc chương trình (đã kiếm được 1 đáp án thỏa mãn).
+
+**25. KINV**
+
+Bài này là bài mở rộng hơn của bài [NKINV](https://vn.spoj.com/problems/NKINV/) (tên đọc lẹo cả lưỡi ._.)
+
+Cách giải bài NKINV là ta sử dụng BIT. Khi đọc vô một giá trị x, ta sẽ cộng vô các giá trị (x+1) (vì các giá trị này đã có sẵn nên j < i và lớn hơn x nên tạo thành cặp nghịch thế) đã có sẵn trên BIT và update lại BIT.
+
+```
+    res += get(x+1);
+    up(x);
+```
+
+Thủ tục get
+
+```
+    void get(int x)
+    {
+        int ans = 0;   
+        for(; x < N; x += x & -x) ans += bit[x];
+        return ans;
+    }
+    
+ ```
+ 
+ Thủ tục update
+ 
+ ```
+    void update(int x)
+    {
+        for(; x > 0; x -= x & -x) bit[x]++;
+    }
+ ```
+ 
+ **Trở lại với cách giải bài KINV**
+ 
+ Gọi f[k][i] là số dãy nghịch thế độ dài k kết thúc tại a[i].
+ 
+ Ban đầu f[1][i] = 1 (với mọi i), ta có f[k][i] = Σf[k-1][j] với mọi j < i và a[j] > a[i].
+ 
+ Kết quả là sum(f[k][i]).
+ 
+ [Code here](https://pastebin.com/miFt4UA7)
+ 
+ **26. QBDIVSEQ**
+ 
+ 
