@@ -3,6 +3,7 @@ layout : post
 comments : true
 tags : [dp]
 title : Quy hoạch động
+published : true
 ---
 ## Beginner
 
