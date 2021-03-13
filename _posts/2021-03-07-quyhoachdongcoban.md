@@ -450,4 +450,8 @@ Thủ tục get
  
  **26. [QBDIVSEQ](https://vnoi.info/problems/QBDIVSEQ)**
  
+ Dễ thấy rằng một phần tử mà nhỏ hơn vị trí trước nó bất kì thì ta phải thêm nó vào 1 dãy con tăng mới -> số cách chia ít nhất chính là độ dài của dãy con giảm dài nhất.
  
+ **27. HAF1**
+ 
+ Ngủ mai học tiếp, đuối vl =((
