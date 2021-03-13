@@ -116,17 +116,17 @@ Có thể dễ dàng thấy đây là một bài Dijkstra cơ bản, tuy nhiên 
 
 (Ctrl + f -> search tên bài)
 
-**1. LIQ**
+**1. [LIQ](https://vnoi.info/problems/LIQ)**
 
 f[i] = f[j] + 1 nếu a[j] < a[i].
 
-**2. NKTICK**
+**2. [NKTICK](https://vnoi.info/problems/NKTICK)**
 
 f[1] = a[1]
 f[2] = min(f[1]+a[2],r[1])
 f[i] = min( f[i-1]+a[i] , f[i-2]+r[i-1] )
 
-**3. QBMAX**
+**3. [QBMAX](https://vnoi.info/problems/QBMAX)**
 
 f[i][j] là cách đi sao cho đến ô (i,j) đạt giá trị max.
 
@@ -134,7 +134,7 @@ f[i][j] = max(f[i-1][j-1]+a[i][j], max(f[i][j]+a[i][j], f[i+1][j-1]+a[i][j]) )
 
 Kết quả là max f[i][m]
 
-**4. LIS**
+**4. [LIS](https://vnoi.info/problems/LIS)**
 
 ###### Sử dụng chặt nhị phân 
 
@@ -162,13 +162,13 @@ Nếu gán b(a[i]) = f(i), mảng b(x) có ý nghĩa là độ dài dãy con tă
 
 Nếu giới hạn quá lớn thì ta nén số lại và tính.
 
-**5. LATGACH**
+**5. [LATGACH](https://vnoi.info/problems/LATGACH)**
 
 Bài này là số fibanacci, f[i] = f[i-2] + f[i-1].
 
 Còn why nó là số fibonacci thì xem ở đây ._. [Youtube](https://www.youtube.com/watch?v=ucbH-tga7U4&t=464s) (mấy ông Ấn Độ giỏi vlin :vv)
 
-**6. VSTEPS**
+**6. [VSTEPS](https://vnoi.info/problems/VSTEPS)**
 
 f[1] = 1
 
@@ -176,7 +176,7 @@ f[i] += f[i-2] (nếu i-2 không bị hư)
 
 f[i] += f[i-1] (nếu i-1 không bị hư)
 
-**7. NKPALINS**
+**7. [NKPALINS](https://vnoi.info/problems/NKPALIN)**
 
 Ta đảo xâu lại và tìm xâu con chung dài nhất của hai xâu
 
@@ -190,7 +190,7 @@ Truy vết:
 - Nếu f[i][j] = f[i-1][j] thì i--
 - Nếu f[i][j] = f[i][j-1] thì j--
 
-**8. BONES**
+**8. [BONES](https://vnoi.info/problems/BONES)**
 
 f[i] là số lần tổng i xuất hiện (i <= 80)
 
@@ -204,7 +204,7 @@ f[i+j+k]++;
             
 Kết quả là i (với i là max (f[i]))
 
-**9. NKCABLE**
+**9. [NKCABLE](https://vnoi.info/problems/NKCABLE)**
 
 f[i] là cách nối từ máy thứ 1 -> máy thứ i
 
@@ -212,7 +212,7 @@ f[0] = 0;
 f[1] = +oo (vì có 1 máy thì không thể nối được)
 f[i] = min(f[i-1],f[i-2]) + a[i-1]
 
-**10. NKREZ**
+**10. [NKREZ](https://vnoi.info/problems/NKREZ)**
 
 Sắp xếp các cuộc họp theo thứ tự thời gian kết thúc tăng dần (ki < kj với i < j)
 
@@ -224,7 +224,7 @@ Nếu chọn cuộc họp thứ i, vì mảng f là mảng tăng dần nên ta c
 
 Sử dụng chặt nhị phân để tìm vị trí j.
 
-**11. QBSQUARE**
+**11. [QBSQUARE](https://vnoi.info/problems/QBSQUARE)**
 
 Gọi l[i][j] là số số 1 (or số 0) liên tiếp trên hàng i và xét đến cột j
 
@@ -250,7 +250,7 @@ Tính l[i][j] từ l[i][j-1] như sau : l[i][j] = l[i][j-1] + 1 nếu a[i][j] ==
 
 Tính c[i][j] tương tự.
 
-**12. CNTBULLS**
+**12. [CNTBULLS](https://vnoi.info/problems/CNTBULLS)**
 
 Cho dãy ban đầu chỉ toàn bò cái, ta sẽ tìm cách thay thế các con bò đực rựa vô sao cho nó ko đánh nhau.
 
@@ -264,7 +264,7 @@ Còn nếu i >= k+1 thì f[i] = f[i-1] + f[i-k-1] tức là số cách sắp t�
 
 Kết quả là f[n] (nhớ lấy mod)
 
-**13. PTRANG**
+**13. [PTRANG](https://vnoi.info/problems/PTRANG)**
 
 Gọi f[i] là số cách chia các từ vào dòng sao cho hệ số phạt là min.
 
@@ -274,7 +274,7 @@ f[i] = min(f[i], max(f[j-1], l - sum(j,i)))
 
 Kết quả là f[n].
 
-**14. V8SCORE**
+**14. [V8SCORE](https://vnoi.info/problems/V8SCORE)**
 
 Gọi a[i][j] là điểm môn thứ i của giám khảo j
 
@@ -292,7 +292,7 @@ Nếu có cách chọn, ta truy vết để tìm kết quả:
 
 k++, khi mà s != 0 thì push(f[k][s]) vào stack rồi lấy s -= f[k--][s] (tức là push f[k-1][s-f[k][s ban đầu]])
 
-**15. BCDIV**
+**15. [BCDIV](https://vnoi.info/problems/BCDIV)**
 
 Gọi f[i][j] là số cách chia i phần tử đầu thành j nhóm
 
@@ -306,7 +306,7 @@ kết quả là f[n][k], pre_calculated rồi truy vấn thôi.
 
 *bài này dell có trên cf à =(((, voj như lìn ấy*
 
-**16. COND**
+**16. [COND](https://vnoi.info/problems/COND)**
 
 Ta có thể suy nghĩ bài này theo 1 hướng khác, đó là chia các phần tử thành các tập chứa dấu bằng và đặt dấu bé giữa các tập hợp đó, (a1 = a2 = ...) < (ai = ai+1 = ...) < ...
 
@@ -318,7 +318,7 @@ Tính trước mảng f[i][j] như bài 15, tính thêm một mảng g[i] là s�
 
 Kết quả là ans = 1 (Tôi cũng k hiểu tại sao lại có số 1 ở đây) + f[n] (không có dấu bé nào) + dp[n][k] * f[k] (với k là số tập hợp được chia, 2 <= k < n)
 
-**17. DTDOI**
+**17. [DTDOI](https://vnoi.info/problems/DTDOI)**
 
 Do max(S) = 1e9 còn sum(a[i]) = 10000 nên ta sẽ tham lam chọn thằng lớn nhất cho đến khi S < sum(a[i]), cho lớn hơn tí là 20000, add là số tờ tiền lớn nhất được chọn.
 
@@ -328,7 +328,7 @@ Với mỗi a[j] <= i ta sẽ kiểm tra và lấy min -> f[i] = min(f[i], f[i-a
 
 Kết quả là f[s] + add.
 
-**18. THEME**
+**18. [THEME](https://vnoi.info/problems/THEME)**
 
 Lợi dụng những đặc điểm sau để thiết kế giải thuật duyệt bình thường vẫn Full Test ngon lành :
 
@@ -339,7 +339,7 @@ Cho biến i chạy theo khoảng cách giữa 2 nốt thuộc đoạn cao trào
 
 *DYNAMIC WAYS WILL BE RELEASED LATER :D*
 
-**19. ELEVATOR**
+**19. [ELEVATOR](https://vnoi.info/problems/ELEVATOR)**
 
 Gọi f[i][j] là mảng lưu kết quả khi xét đến loại đá i có độ cao j.
 
@@ -351,7 +351,7 @@ Nếu độ cao khi xếp k viên đó loại i <= độ cao tối đa của i (
 
 Kết quả là max f[n][j].
 
-**20. NKPATH**
+**20. [NKPATH](https://vnoi.info/problems/NKPATH)**
 
 Bài này dễ thôi, dộng thẳng 4 vòng for mà làm ._. (100^4)
 
@@ -359,7 +359,7 @@ For p q rồi for i j r kiểm tra nếu ô (i,j) có đến được ô(p,q) ha
 
 Kết quả là sum(f[i][n])
 
-**21. SPSEQ**
+**21. [SPSEQ](https://vnoi.info/problems/SPSEQ)**
 
 Gọi f[i] là độ dài dãy con tăng dài nhất khi xét từ 1 đến i.
 
@@ -371,7 +371,7 @@ Tính f[i] và g[i] như bài LIS (đảo ngược mảng a lại và tính g[i]
 
 Như ví dụ trên, giả sử f[i] = 5 còn g[j] = 10 thì ta sẽ lấy đoạn f[i] và thêm 5 đoạn g[j] (chắc chắn sẽ lấy được vì độ dài dãy con tăng dài nhất tại vị trí j là 10 mà) -> kết quả là min(f[i],g[j]) * 2 - 1 (trừ 1 vì nó bị double thằng i).
 
-**22. LQDGONME**
+**22. [LQDGONME](https://vnoi.info/problems/LQDGONME)**
 
 Gọi a[i][j] là phần tử thứ j của hoán vị i.
 
@@ -385,7 +385,7 @@ Cơ sở qhđ : f[i] = 1.
 
 *stolen from cowboycoder :D*
 
-**23. QBPAL**
+**23. [QBPAL](https://vnoi.info/problems/QBPAL)**
 
 Gọi f[i][j] là số xâu palindrome trong đoạn i -> j
 
@@ -394,7 +394,7 @@ Gọi f[i][j] là số xâu palindrome trong đoạn i -> j
 
 Bài này là BigNum :), skip.
 
-**24. NKH**
+**24. [NKH](https://vnoi.info/problems/NKH)**
 
 Bài này làm theo đệ quy ngon lành, gọi thủ tục bktr(i,j,k) với i là vị trí hiện tại của S1, j là vị trí hiện tại của S2 và k là vị trí hiện tại của S.
 
@@ -406,7 +406,7 @@ Mỗi lần đệ quy tiếp thì lưu vị trí vào một mảng res.
 
 Nếu k=n+1 thì xuất mảng res ra và kết thúc chương trình (đã kiếm được 1 đáp án thỏa mãn).
 
-**25. KINV**
+**25. [KINV](https://vnoi.info/problems/KINV)**
 
 Bài này là bài mở rộng hơn của bài [NKINV](https://vn.spoj.com/problems/NKINV/) (tên đọc lẹo cả lưỡi ._.)
 
@@ -448,6 +448,6 @@ Thủ tục get
  
  [Code here](https://pastebin.com/miFt4UA7)
  
- **26. QBDIVSEQ**
+ **26. [QBDIVSEQ](https://vnoi.info/problems/QBDIVSEQ)**
  
  
