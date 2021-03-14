@@ -519,4 +519,4 @@ Code đầu là không có thêm điều kiện -> chỉ được 54đ, code 2 t
 **30. [MDOLLS](https://vnoi.info/problems/MDOLLS/)**
 
 - Sắp xếp w tăng dần, nếu w bằng thì h giảm dần.
-- Kết quả của bài toán là dãy con không giảm dài nhất trên mảng h.
+- Kết quả của bài toán là dãy con không tăng dài nhất trên mảng h.
