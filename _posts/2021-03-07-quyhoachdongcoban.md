@@ -452,7 +452,7 @@ Thủ tục get
  **26. [QBDIVSEQ](https://vnoi.info/problems/QBDIVSEQ)**
  
  Dễ thấy rằng một phần tử mà nhỏ hơn vị trí trước nó bất kì thì ta phải thêm nó vào 1 dãy con tăng mới -> số cách chia ít nhất chính là độ dài của dãy con giảm dài nhất.
- 
+ *
  **27. [HAF1](https://vnoi.info/problems/HAF1/)**
  
 Gọi f[i][j] là quãng đường ngắn nhất để đi đến ô (i,j)
@@ -469,3 +469,26 @@ Kết quả là min(f[m][i])
 
 **28. [FINDNUM](https://vnoi.info/problems/FINDNUM/)**
 
+Bài này cần 1 chút kiến thức số học, với một số nguyên m bất kì ta có thể phân tích nó thành tích của lũy thừa các số nguyên tố
+
+(p1^c1) * (p2^c2) * (p3^c3) * ... * (pk^ck) = m **(1)**
+
+Công thức tính số ước của m sẽ là (c1+1) * (c2+1) * ... * (ck + 1) **(2)** (Kiến thức tổ hợp, chỉnh hợp lớp 11 có học)
+
+Từ đó bài toán quy về tìm bộ c1, c2, ..., ck sao cho tích (2) bằng n và tích (1) nhỏ nhất có thể.
+
+Gọi một mảng pr chứa các số nguyên tố đầu dãy (lấy tới tầm 10 số là đc r ._.)
+
+Ta có thể quy hoạch động để tìm bộ c hoặc quay lui mỗi giá trị ci cũng được.
+
+Gọi f[i][j] là số nhỏ nhất có i ước mà chỉ sử dụng j số nguyên tố đầu.
+
+Nếu i = 1 thì f[i][j] = 1, nếu j = 0 thì f[i][j] = LLONG_MAX;
+
+Ban đầu f[i][j] = f[i][j-1], ta sẽ duyệt để xem nhân với lũy thừa bao nhiêu của số nguyên tố j để f[i][j] tối ưu hơn -> for cùng lúc hai biến k, val lần lượt là lũy thừa và giá trị của số nguyên tố sau khi lũy thừa.
+
+Nếu mà i | (k+1) (lũy thừa k thì số ước nhân thêm k+1) và f[i/(k+1)][j-1] * val <= INF thì f[i][j] = min(f[i][j], f[i/(k+1)][j-1] * val;
+
+Kết quả là f[n][10]
+
+**Chú ý chỗ điều kiện f[i/(k+1)][j-1] * val có thể rất lớn (> 1e18) vậy nên ta chuyển đk về dạng 1e18/val.**
