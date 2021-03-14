@@ -515,3 +515,8 @@ Chú ý nếu ta duyệt p thì sẽ bị TLE vì độ phức tạp của nó l
 ![image](https://user-images.githubusercontent.com/69662229/111072470-f927df00-8497-11eb-8f93-7036b5ab2eae.png)
 
 Code đầu là không có thêm điều kiện -> chỉ được 54đ, code 2 thêm điều kiện tô đen thì AC :)
+
+**30. [MDOLLS](https://vnoi.info/problems/MDOLLS/)**
+
+- Sắp xếp w tăng dần, nếu w bằng thì h giảm dần.
+- Kết quả của bài toán là dãy con không giảm dài nhất trên mảng h.
