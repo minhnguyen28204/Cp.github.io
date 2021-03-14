@@ -453,6 +453,19 @@ Thủ tục get
  
  Dễ thấy rằng một phần tử mà nhỏ hơn vị trí trước nó bất kì thì ta phải thêm nó vào 1 dãy con tăng mới -> số cách chia ít nhất chính là độ dài của dãy con giảm dài nhất.
  
- **27. HAF1**
+ **27. [HAF1](https://vnoi.info/problems/HAF1/)**
  
- Ngủ mai học tiếp, đuối vl =((
+Gọi f[i][j] là quãng đường ngắn nhất để đi đến ô (i,j)
+
+f[1][i] = a[1][i].
+
+Tại mỗi hàng ta có thể đi qua trái, phải hoặc đi từ trên xuống -> f[i][j] sẽ có 3 trường hợp.
+
+Đầu tiên duyệt j là vị trí cột, thì f[i][j] = min(f[i-1][j],f[i][j-1]) + a[i][j] (tức là đi từ trái qua hoặc đi từ trên xuống)
+
+Sau đó duyệt j một lần nữa để kiểm tra nếu đi từ phải qua có tối ưu hơn hay không, f[i][j] = min(f[i][j], f[i][j+1]+a[i][j])
+
+Kết quả là min(f[m][i])
+
+**28. [FINDNUM](https://vnoi.info/problems/FINDNUM/)**
+
