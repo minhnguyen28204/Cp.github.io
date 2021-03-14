@@ -491,7 +491,7 @@ Nếu i = 1 thì f[i][j] = 1, nếu j = 0 thì f[i][j] = LLONG_MAX;
 
 Ban đầu f[i][j] = f[i][j-1], ta sẽ duyệt để xem nhân với lũy thừa bao nhiêu của số nguyên tố j để f[i][j] tối ưu hơn -> for cùng lúc hai biến k, val lần lượt là lũy thừa và giá trị của số nguyên tố sau khi lũy thừa.
 
-Nếu mà i | (k+1) (lũy thừa k thì số ước nhân thêm k+1) và f[i/(k+1)][j-1] * val <= INF thì f[i][j] = min(f[i][j], f[i/(k+1)][j-1] * val;
+Nếu mà i % (k+1) = 0 (lũy thừa k thì số ước nhân thêm k+1) và f[i/(k+1)][j-1] * val <= INF thì f[i][j] = min(f[i][j], f[i/(k+1)][j-1] * val;
 
 Kết quả là f[n][10]
 
