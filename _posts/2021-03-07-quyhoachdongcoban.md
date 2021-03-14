@@ -520,3 +520,9 @@ Code đầu là không có thêm điều kiện -> chỉ được 54đ, code 2 t
 
 - Sắp xếp w tăng dần, nếu w bằng thì h giảm dần.
 - Kết quả của bài toán là dãy con không tăng dài nhất trên mảng h.
+
+**Lưu ý nhỏ:**
+- Tìm dãy con tăng dài nhất chặt nhị phân sài hàm lower_bound.
+- Tìm dãy con không giảm (bằng nhau được) sài hàm upper_bound.
+- Tìm dãy con giảm dài nhất -> đảo ngược mảng lại và tìm dãy con tăng dài nhất.
+- Tìm dãy con không tăng -> đảo ngược mảng lại và tìm dãy con không giảm dài nhất.
