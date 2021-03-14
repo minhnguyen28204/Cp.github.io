@@ -496,3 +496,22 @@ Nếu mà i % (k+1) = 0 (lũy thừa k thì số ước nhân thêm k+1) và f[i
 Kết quả là f[n][10]
 
 **Chú ý chỗ điều kiện f[i/(k+1)][j-1] * val có thể rất lớn (> 1e18) vậy nên ta chuyển đk về dạng 1e18/val.**
+
+**29. [NKSP](https://vnoi.info/problems/NKSP/)**
+
+Gọi f[i][j] = 1 nếu đoạn (i,j) là xâu siêu đối xứng.
+
+Ban đầu f[i][i] = 1, f[i][i+1] = 1 nếu (s[i] = s[i+1])
+
+Với mỗi f[i][j], ta có hai trường hợp
+
+- Hai đầu i, j giống nhau và xâu (i+1,j-1) là xâu siêu đối xứng -> f[i][j] = 1 if (s[i] = s[j] và f[i+1][j-1] = 1)
+- Xâu (i,j) được tạo thành bởi hai xâu con là xâu siêu đối xứng -> f[i][j] = 1 nếu tồn tại vị trí i < p < j-1 sao cho f[i][p] = 1 và f[p+1][j] = 1.
+
+Chú ý nếu ta duyệt p thì sẽ bị TLE vì độ phức tạp của nó lên tới O(N^3) -> cần thêm điều kiện để loại vòng duyệt p: Nếu mà xâu (i,j) đã là xâu đối xứng sẵn rồi thì không cần duyệt p nữa.
+
+-> dòng for p sẽ là (int p = i+1; p+1 < j **&&!f[i][j]**; p++)
+
+![image](https://user-images.githubusercontent.com/69662229/111072470-f927df00-8497-11eb-8f93-7036b5ab2eae.png)
+
+Code đầu là không có thêm điều kiện -> chỉ được 54đ, code 2 thêm điều kiện tô đen thì AC :)
