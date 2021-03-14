@@ -317,7 +317,11 @@ Với mỗi số dấu bé hơn, ta cần tìm số cách đặt dấu bé (tín
 
 Tính trước mảng f[i][j] như bài 15, tính thêm một mảng g[i] là số cách sắp xếp i phần tử ( g[i] = i! )
 
-Kết quả là ans = 1 (Tôi cũng k hiểu tại sao lại có số 1 ở đây) + f[n] (không có dấu bé nào) + dp[n][k] * f[k] (với k là số tập hợp được chia, 2 <= k < n)
+Kết quả là ans = 1 + f[n] + dp[n][k] * f[k] (với k là số dấu bé, 2 <= k < n)
+
+Cộng 1 là trường hợp không có dấu bé nào -> chỉ có một cách duy nhất
+
+Cộng f[n] là trường hợp có 1 dấu bé -> số cách là hoán vị 
 
 **17. [DTDOI](https://vnoi.info/problems/DTDOI)**
 
