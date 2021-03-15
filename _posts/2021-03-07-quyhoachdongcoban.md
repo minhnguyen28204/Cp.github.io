@@ -527,4 +527,4 @@ Code đầu là không có thêm điều kiện -> chỉ được 54đ, code 2 t
 - Tìm dãy con giảm dài nhất -> đảo ngược mảng lại và tìm dãy con tăng dài nhất.
 - Tìm dãy con không tăng -> đảo ngược mảng lại và tìm dãy con không giảm dài nhất.
 
-**[Part 2](https://4.bp.blogspot.com/-rih4ywvuG-k/WitNi5ddovI/AAAAAAAAE_Q/C_W6clkSjn0oQvVcgm13QteAdQfopQHyACLcBGAs/s1600/%25E1%25BA%25A3nh%2Bch%25E1%25BA%25BF%2Btin%2Bng%25C6%25B0%25E1%25BB%259Di%2Bvkl%2B-%2B1.jpg)**
+**[Part 2](https://minhnguyen28204.github.io/2021-03-15-quyhoachdongcobanpart2/)
