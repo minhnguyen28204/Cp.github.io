@@ -99,9 +99,68 @@ while (q khác rỗng)
 
 ## **4. Bellman-Ford tìm đường đi ngắn nhất trên đồ thị có trọng số âm**
 
+### Bellman-Ford Algorithm
+
+Thuật toán Bellman-Ford được sử dụng để tìm đường đi ngắn nhất từ một đỉnh xuất phát đến mọi đỉnh khác nó. Thuật toán có thể áp dụng được cho mọi loại đồ thị kể cả đồ thị không chứa chu trình âm. Nếu đồ thị chứa chu trình âm, thuật toán này có thể phát hiện nó.
+
+### Example
+
+![image](https://user-images.githubusercontent.com/69662229/111105696-c0781c00-8510-11eb-9e7e-38afc96a397b.png)
+
+Hãy xem thuật toán Bellman-Ford hoạt động như thế nào trong đồ thị như ở trên:
+
+Mỗi đỉnh của đồ thị được cho một giá trị khoảng cách, nút xuất phát có giá trị bằng không, các nút khác là dương vô cùng.
+
+Thuật toán sẽ tìm cạnh để giảm độ lớn của khoảng cách. Đầu tiên, các nút được thăm từ đỉnh 1 giảm khoảng cách:
+
+![image](https://user-images.githubusercontent.com/69662229/111105724-ccfc7480-8510-11eb-811f-661e16f0f81f.png)
+
+Sau đó, cạnh 2-5 và 3-4 giảm khoảng cách:
+
+![image](https://user-images.githubusercontent.com/69662229/111105754-df76ae00-8510-11eb-9706-d570edb14f3f.png)
+
+Thay đổi cuối cùng:
+
+![image](https://user-images.githubusercontent.com/69662229/111105760-e4d3f880-8510-11eb-80b2-4e95f8a94b43.png)
+
+Sau thay đổi cuối, không còn cạnh nào có thể giảm khoảng cách nữa. Điều này có nghĩa là khoảng cách cuối cùng, chúng ta đã tính thành công khoảng cách ngắn nhất từ 1 đỉnh xuất phát đến các đỉnh còn lại.
+
+Ví dụ: Min dis từ đỉnh 1 đến đỉnh 5 là đường đi như sau:
+
+![image](https://user-images.githubusercontent.com/69662229/111105770-eb627000-8510-11eb-81ab-4929c6903817.png)
+
+### Implementation
+
+``` C++
+for(int i=1; i<=n; i++) d[i] = inf;
+d[x] = 0;
+//khoi tao gia tri cho cac nut
+
+for(int i=1; i<n; i++)
+{
+  //m là số lượng các cạnh của đồ thị
+  for(int j=1; j<=m; j++)
+  {
+    int u = a[j].u;
+    int v = a[j].v;
+    int w = a[j].w;
+    d[v] = min(d[v],d[u]+w);
+  }
+}
+// do phuc tap O(n*m)
+```
 
 ## **5. Tìm chu trình âm của đồ thị bằng Bellman-Ford**
 
+Thuật toán Bellman Ford cũng có thể dùng để kiểm tra nếu đồ thị có chu trình âm. Ví dụ như đồ thị sau
+
+![image](https://user-images.githubusercontent.com/69662229/111105829-0af99880-8511-11eb-91f3-2df2a3ca69d9.png)
+
+có chứa chu trình âm 2 -> 3 -> 4 -> 2 với trọng số là -4
+
+Nếu mà đồ thị có chứa chu trình âm, chúng ta có thể giảm khoảng cách vô hạn lần bằng cách lặp lại chu trình âm. Vì thế khoảng cách ngắn nhất không có nghĩa trong trường hợp này.
+
+Một chu trình âm có thể phát hiện bằng cách thực hiện thuật toán n lần. Trong lần thực hiện thứ n, nếu nó giảm đi một khoảng cách bất kì thì đồ thị có chứa 1 chu trình âm. Chú ý rằng thuật toán này có thể dùng để tìm kiếm chu trình âm trong toàn đồ thị bất kể đỉnh xuất phát nào.
 
 ## **6. Topological sort bằng BFS, DFS**
 
