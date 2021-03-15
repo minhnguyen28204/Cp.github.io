@@ -21,10 +21,10 @@ Gọi một mảng f[i], f[i]=1 nếu A thắng khi có i số xu, =0 nếu B th
 
 f[0] = 0, f[1] = f[k] = f[l] = 1
 
-f[i] |= !f[i-1] (nếu i-1>=0, tức là trước đó f[i-1] Asen đi trước và đã biết được người thắng thì f[i] Asen đi trước thì người kia sẽ thắng) 
+f[i] (|)= !f[i-1] (nếu i-1>=0, tức là trước đó f[i-1] Asen đi trước và đã biết được người thắng thì f[i] Asen đi trước thì người kia sẽ thắng) 
 
-f[i] |= !f[i-k] (nếu i-k>=0)
+f[i] (|)= !f[i-k] (nếu i-k>=0)
 
-f[i] |= !f[i-l]
+f[i] (|)= !f[i-l]
 
-Phép or ( |= ) có nghĩa là chỉ cần có 1 trường hợp (i-1, i-k, i-l) xu mà Boyan thắng thì trường hợp i xu Asen sẽ thắng.
+Phép or ( (|)= ) có nghĩa là chỉ cần có 1 trường hợp (i-1, i-k, i-l) xu mà Boyan thắng thì trường hợp i xu Asen sẽ thắng.
