@@ -104,3 +104,79 @@ while (q khác rỗng)
 
 
 ## **6. Topological sort bằng BFS, DFS**
+
+### Topological Sorting
+Cho một đồ thị với N đỉnh và M cạnh. Yêu cầu trả về số thứ tự của các đỉnh sao cho mỗi đỉnh có số thứ tự bé hơn đều có thể đi đến được đỉnh có số lớn hơn.
+
+Nói cách khác phải tìm một hoán vị của các đỉnh (topological order) để cho tương ứng với các cạnh của đồ thị
+
+Topological order có thể non-unique (không độc nhất).
+
+Topological order không xuất hiện nếu đồ thị có chứa chu trình (cycles).
+
+### The algorithm
+Để giải quyết vấn đề này, ta sài DFS hoặc BFS cũng được.
+
+Giả sử đồ thị là một acyclic graph (đồ thị có hướng không có chu trình), sẽ có ít nhất 1 đáp án.
+
+**DFS**
+
+Gọi một dãy T là dãy đánh thứ tự các đỉnh của đồ thị. Ta sẽ dfs những đỉnh chưa được thăm, đến khi không còn cạnh ra thì đỉnh đó là một đỉnh sinks nên ta thêm đỉnh đó vào cuối dãy. Và cứ thế cho đến khi cả N đỉnh đều được thăm
+
+Độ phức tạp cho dfs N đỉnh là O(n) và thăm xấu nhất qua M cạnh là O(N+M).
+
+**BFS**
+
+Đầu tiên ta đánh dấu các đỉnh có đầu vào bằng 0, push các đỉnh đó vào hàng đợi (queue) và đánh dấu vào mảng kết quả.
+
+Bắt đầu lấy từng đỉnh trong queue, duyệt các đỉnh v kề nó và giảm số đỉnh đầu vào của v đi 1, sau đó duyệt các đỉnh v lần nữa, nếu đỉnh v có đầu vào là 0 thì push vô queue và đánh dấu vào mảng kết quả.
+
+### Implementation
+
+**DFS**
+```
+// a là vector chứa các đỉnh kề với u
+// d[u] = 0 là chưa thăm, d[u] = 1 là đã thăm
+void dfs(int u) 
+{
+	if (d[u]) return;
+	for (int i=0; i<a[u].size(); i++)
+	{
+		int v = a[u][i];
+		if (!d[v]) dfs(v);
+	}
+	d[u]=1;
+	topsort[cnt]=u;
+	cnt--;
+}
+```
+
+**BFS**
+```
+//res[] là mảng lưu kết quả topo sort, ans là số lượng đỉnh đã được sắp xếp
+// dv[i] lưu số đỉnh đầu vào của i, a[u].pb(v) thì dv[v]++
+
+for(int i=1; i<=n; i++) if (dv[i]==0)
+{
+  q.push(i);
+  ans++;
+  res[ans] = i;
+}
+
+while (q.size())
+{
+  int u = q.front();
+  q.pop();
+  for(int v : a[u])
+  {
+    dv[v]--;
+  }
+  for(int v : a[u])
+  {
+    if (dv[v]==0){
+      q.push(v);
+      res[++ans] = v;
+    }
+  }
+}
+```
