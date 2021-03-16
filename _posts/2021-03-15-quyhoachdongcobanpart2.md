@@ -93,3 +93,43 @@ Nếu số trứng hiện tại lớn hơn 3 và best[i-1][j] = best[i-2][j] = b
 [Code](https://pastebin.com/Y9UBL82t)
 
 *Bài méo giải trí tí nào =((*
+
+**36. [SPBINARY](https://vnoi.info/problems/SPBINARY/)**
+
+Gọi f0[i] là số lượng xâu nhị phân độ dài i thỏa mãn đề bài có kết thúc cuối là 0.
+
+f1[i] tương tự nhưng kết thúc cuối là 1
+
+Base case f0[0] = f1[0] = 1
+
+f0[i] bằng tổng của k trường hợp f1[i-1], f1[i-2], ..., f1[i-k]
+
+f1[i] tính tương tự
+
+Kết quả là f1[n] + f0[n]
+
+*Bài này cài bignum mới làm đc*
+
+**37. [HUGEKNAP](https://vnoi.info/problems/HUGEKNAP/)**
+
+Gọi f[i][j] là giá trị nhận được tối đa khi xét i vật đầu và nhét khối lượng là j.
+
+Với mỗi i, nếu w[i] > j thì không thể nhét vật i vào nên f[i][j] = f[i-1][j] (giá trị tối đa nhận được khi xét i-1 vật)
+
+Còn nếu w[i] <= j thì có 2 trường hợp xảy ra:
+
+- Lấy vật thứ i -> f[i][j] = f[i-1][j-a[i]] + v[i]
+- Không lấy vật thứ i -> f[i][j] = f[i-1][j]
+
+Truy vết:
+
+Kết quả là f[n][W], gán i = n và j = W, khi mà i khác 0 và j khác 0 thì có hai trường hợp:
+
+- Nếu f[i][j] == f[i-1][j] tức là vật i không được lấy thì i--
+- Nếu f[i][j] != f[i-1][j] thì vật i được lấy -> lưu i vào mảng kết quả và j -= w[i]
+
+*Bài này nộp trên cf thì MLE, nộp trên voj thì TLE :)))) chịu*
+
+**38. [DISNEY1](https://vnoi.info/problems/DISNEY1/)
+
+Nghỉ tí code tiếp, thoái hóa cột sống r :)
