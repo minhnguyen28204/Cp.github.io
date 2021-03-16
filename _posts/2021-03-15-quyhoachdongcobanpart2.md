@@ -72,3 +72,24 @@ Ta chỉ cần duyệt qua n-1 thằng phi công và lấy n/2 độ chênh lệ
 Mỗi lần duyệt qua thằng i, đẩy độ chênh lệch lương của thằng i vô heap. Nếu i là số lẻ thì thằng top của heap thỏa điều kiện tuổi bé hơn lái chính khác -> lấy thằng top và pop nó khỏi heap, điều này đảm bảo những thằng làm trợ lái đều có thằng lái chính khác lớn tuổi hơn. (không biết giải thích sao nữa ._., cứ tính bằng tay là hiểu)
 
 [Code](https://pastebin.com/ZfNVH0Wb)
+
+**35. [EGG](https://vnoi.info/problems/EGG/)**
+
+Khi thả 1 quả trứng ở tầng x, có hai khả năng xảy ra:
+
+- Trứng vỡ thì ta chỉ cần thử từ những tầng nhỏ hơn và số lượng trứng mất đi 1 quả.
+- Trứng không vỡ thì ta chỉ cần thử ở những tầng cao hơn -> số lượng tâng cần thử là tầng cao nhất trừ đi tầng hiện tại và số lượng trứng giữ nguyên.
+
+Nếu chỉ cần 1 quả trứng thì chúng ta sẽ thả từ tầng 1 đến tầng cao nhất nên base case của 1 quả trứng là số tầng hiện tại.
+
+Tương tự, nếu chì còn lại 1 tầng để thử hoặc không còn tầng nào để thử thì kết quả là số tầng. (nhiều trứng ntn cũng chỉ cần thả 1 tầng cuối là biết)
+
+[Code back track](https://pastebin.com/mUC5GNBk)
+
+Để Ac bài này cần chuyển về quy hoạch động, gọi mảng f[i][j] là số lần thả ít nhất để xác định được độ cứng của trứng khi có i quả và j tầng và mảng best[i][j] là tầng x sao cho trường hợp xấu nhất là lớn nhất và trường hợp xấu nhất đó là trường hợp con của (i,j)
+
+Nếu số trứng hiện tại lớn hơn 3 và best[i-1][j] = best[i-2][j] = best[i-3][j] thì best[i][j] bằng luôn với best[i-1][j] và ta chỉ cần xét tầng best[i][j].
+
+[Code](https://pastebin.com/Y9UBL82t)
+
+*Bài méo giải trí tí nào =((*
