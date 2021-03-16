@@ -156,4 +156,22 @@ Kết quả là f[n][W], gán i = n và j = W, khi mà i khác 0 và j khác 0 t
 
 **38. [DISNEY1](https://vnoi.info/problems/DISNEY1/)
 
-Nghỉ tí code tiếp, thoái hóa cột sống r :)
+Gọi f[i][j] là chi phí ít nhất để Cuội đi đến i và Bờm đi đến j
+
+f[1][1] = 0 (ban đầu Cuội và Bờm đều ở 1) và mọi f[i][j] = +oo
+
+Vì phải đi theo một dãy tăng dần, giả sử C và B đang ở hai vị trí i, j thì vị trí tiếp theo cần đến là next = max(i,j)+1 để đảm bảo đi hết n vị trí.
+
+Nếu next <= n, có 3 cách để đi:
+
+- Cuội đi đến next, còn Bờm đứng yên -> f[next][j] = min(f[next][j], f[i][j] + a[i][next])
+- Bờm đi đến next, còn Cuội đứng yên -> f[i][next] = min(f[i][next], f[i][j] + a[j][next])
+- C và B đều đi đến next -> f[next][next] = min(f[next][next], f[i][j] + a[i][next] + a[j][next])
+
+Nếu next = n+1 thì C và B đã đi hết n vị trí nên ta lấy res = min(f[i][j] + a[i][1] + a[j][1])
+
+Kết quả là res
+
+**39. [LQDFIBO](https://vnoi.info/problems/LQDFIBO/)**
+
+Ngủ mai code tiếp 
