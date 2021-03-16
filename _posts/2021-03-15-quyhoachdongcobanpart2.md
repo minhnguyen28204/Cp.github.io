@@ -86,11 +86,35 @@ Tương tự, nếu chì còn lại 1 tầng để thử hoặc không còn tầ
 
 [Code back track](https://pastebin.com/mUC5GNBk)
 
-Để Ac bài này cần chuyển về quy hoạch động, gọi mảng f[i][j] là số lần thả ít nhất để xác định được độ cứng của trứng khi có i quả và j tầng và mảng best[i][j] là tầng x sao cho trường hợp xấu nhất là lớn nhất và trường hợp xấu nhất đó là trường hợp con của (i,j)
+Để Ac bài này cần chuyển về quy hoạch động, gọi mảng f[i][j] là số lần thả ít nhất để xác định được độ cứng của trứng khi có i quả và j tầng.
 
-Nếu số trứng hiện tại lớn hơn 3 và best[i-1][j] = best[i-2][j] = best[i-3][j] thì best[i][j] bằng luôn với best[i-1][j] và ta chỉ cần xét tầng best[i][j].
+Ta có công thức tổng quát theo hướng giải trên là f[n][k] = 1 + min( max(f[n-1][i-1],f[n][k-i]) ) với (1 <= i <= m)
 
-[Code](https://pastebin.com/Y9UBL82t)
+Nếu như ta cố định n và k, xét theo i ta thấy khi i tăng thì i-1 tăng nên f[n-1][i-1] tăng, i tăng thì m-i giảm nên f[n][m-i] giảm.
+
+![image](https://user-images.githubusercontent.com/69662229/111334248-a0d81500-8630-11eb-9c92-50e958644e66.png)
+
+*ảnh cop trên mạng nên hơi bị ngược tí, dp[n][k] là k quả trứng và n tầng*
+
+![image](https://user-images.githubusercontent.com/69662229/111334928-35427780-8631-11eb-96c7-712bdb54d4c9.png)
+
+max(f[n-1][i-1],f[n][m-i]) chính là đường màu tím.
+
+Vậy ta thấy min của max(f[n-1][i-1],f[n][m-i]) chính là điểm giao nhau nó.
+
+Từ đó ta có thể chặt nhị phân để tìm i 
+
+Ta cần tìm vị trí i sao cho f[n-1][i-1] = f[n][m-i] với i trong đoạn [l,r]
+
+Với mỗi vị trí mid = (l+r):2, ta nhận thấy nều f[n-1][mid-1] > f[n][m-mid] thì ta cần tìm một thằng mid mới trong đoạn [l,mid]
+
+Ngược lại nếu f[n][m-mid] > f[n-1][mid-1] thì ta tiếp tục chặt nhị phân trong đoạn [mid,r]
+
+Độ phức tạp là O(n*m*log(m))
+
+[Code stolen từ vnoi mặc dù chả hiểu gì](https://pastebin.com/Y9UBL82t)
+
+[Code chặt nhị phân](https://pastebin.com/Bs2Esrj1)
 
 *Bài méo giải trí tí nào =((*
 
