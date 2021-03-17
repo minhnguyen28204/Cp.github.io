@@ -174,4 +174,15 @@ Kết quả là res
 
 **39. [LQDFIBO](https://vnoi.info/problems/LQDFIBO/)**
 
-Ngủ mai code tiếp 
+Skip tiếp, lười code bignum lắm 
+
+**40. [Bishwock](https://codeforces.com/problemset/problem/991/D)**
+
+Bài này tham lam là được, gọi biến pre lưu số ô trống của cột trước i, khi xét đến cột thứ i có ba trường hợp xảy ra:
+
+- Cả hai ô cột i đều trống -> nếu cột i-1 có 2 ô trống (pre=2) thì ta sẽ cho một bishwock vào hai ô cột i-1 và 1 ô cột i, còn nếu cột i-1 có 1 ô trống (pre=1) thì vừa đủ để nhét bishwock vào. -> cập nhập lại pre mới
+- Chỉ có một ô cột i trống -> nếu pre = 2 thì ta mới nhét bishwock vào được.
+- Không có ô nào cột i trống thì không nhét được gì hết -> cập nhập pre = 0.
+
+Mỗi lần nhét tăng biến đếm lên, kết quả là biến đếm đó.
+
