@@ -212,6 +212,8 @@ Gọi f[i][j] là số lượng dãy con tăng có độ dài là j khi xét i p
 
 Theo công thức basic của basic là f[i][k] += f[j][k-1] với mọi j sao cho thỏa a[j] < a[i]
 
+Base case là f[i][1] = 1 với mọi i
+
 Dùng một BIT 2 chiều như bài KINV và cài đặt y hệt bài KINV (khác chỗ công thức và kết quả là sum(f[i][k]) với i >= k) 
 
 **NHỚ FOR I XONG MỚI FOR K ._. FOR K TRƯỚC LÀ ĂN LÌN**
