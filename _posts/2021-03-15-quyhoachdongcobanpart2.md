@@ -221,3 +221,16 @@ Dùng một BIT 2 chiều như bài KINV và cài đặt y hệt bài KINV (khá
 *t mệt mỏi với mấy cái for quá =((*
 
 [Code](https://pastebin.com/Pdrs1N6J)
+
+**44. [DISNEY2](https://vnoi.info/problems/DISNEY2/)**
+
+Y hệt như bài Disney1 nhưng không có trường hợp i và j đến cùng lúc next. Thế thôi :D.
+
+![image](https://user-images.githubusercontent.com/69662229/111647341-a1eb7c80-87bf-11eb-8564-f62aeb64944c.png)
+
+=)) 
+
+**45. [CNTOWN](https://vnoi.info/problems/CTNOWN/)**
+
+*lại là toán ._.*
+
