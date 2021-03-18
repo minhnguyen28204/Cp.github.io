@@ -205,3 +205,17 @@ Gọi f[i][j] bằng true nếu người thứ i có khả năng đứng bên tr
 Để tính được f[i][j] ta cần xét mọi người k giữa i và j nếu như i có thể đứng bên trái k, k có thể đứng bên trái j, và một trong hai người i hoặc j có thể thắng k thì f[i][j] = true.
 
 Ta duyệt khoảng cách, với mỗi khoảng cách ta tính i j tương ứng, kết quả là số lượng f[i][i] true với 1<=i<=n.
+
+**43. [INCVN](https://vnoi.info/problems/INCVN/)**
+
+Gọi f[i][j] là số lượng dãy con tăng có độ dài là j khi xét i phần tử đầu.
+
+Theo công thức basic của basic là f[i][k] += f[j][k-1] với mọi j sao cho thỏa a[j] < a[i]
+
+Dùng một BIT 2 chiều như bài KINV và cài đặt y hệt bài KINV (khác chỗ công thức và kết quả là sum(f[i][k]) với i >= k) 
+
+**NHỚ FOR I XONG MỚI FOR K ._. FOR K TRƯỚC LÀ ĂN LÌN**
+
+*t mệt mỏi với mấy cái for quá =((*
+
+[Code](https://pastebin.com/Pdrs1N6J)
