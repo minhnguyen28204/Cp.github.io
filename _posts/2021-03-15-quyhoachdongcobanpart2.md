@@ -186,3 +186,22 @@ Bài này tham lam là được, gọi biến pre lưu số ô trống của c�
 
 Mỗi lần nhét tăng biến đếm lên, kết quả là biến đếm đó.
 
+**41. [Tetrahedron](https://codeforces.com/problemset/problem/166/E)**
+
+Tại một đỉnh bất kì có thể được đi qua từ 3 đỉnh còn lại, ta chỉ quan tâm cách đi tới đỉnh D, coi ba đỉnh ABC như một.
+
+Gọi wD là cách đi tới đỉnh D, wabc là cách đi tới 3 đỉnh A, B, C. wD = 1, wabc=0
+
+Với mỗi lần đi wD sẽ bằng tổng số cách đi từ A, B, C trước đó -> wD = (3 * wabc)
+
+wabc sẽ bằng tổng số cách đi từ ba đỉnh còn lại tức là wabc = (2 * wabc + wD)
+
+Kết quả là wD sau n lần cập nhập.
+
+**42. [LSFIGHT](https://vnoi.info/problems/LSFIGHT/)**
+
+Gọi f[i][j] bằng true nếu người thứ i có khả năng đứng bên trái người thứ j, nếu f[i][i] = true tức là người i có khả năng chiến thắng.
+
+Để tính được f[i][j] ta cần xét mọi người k giữa i và j nếu như i có thể đứng bên trái k, k có thể đứng bên trái j, và một trong hai người i hoặc j có thể thắng k thì f[i][j] = true.
+
+Ta duyệt khoảng cách, với mỗi khoảng cách ta tính i j tương ứng, kết quả là số lượng f[i][i] true với 1<=i<=n.
