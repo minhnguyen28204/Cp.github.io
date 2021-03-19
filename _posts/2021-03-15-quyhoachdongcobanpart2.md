@@ -276,4 +276,16 @@ bignum nên skip =(
 
 Bài này áp dụng từ bài dãy con tăng độ dài k có thể vét được 61đ :v 
 
-Mai tìm cách làm AC sau
+*AC bài này còn dễ hơn cách vét điểm ._.*
+
+Khởi tạo một mảng pair bit[N], với bit[i].fi là độ dài dãy con tăng dài nhất kết thúc tại giá trị i, bit[i].se là số lượng dãy con tăng dài nhất kết thúc tại giá trị i.
+
+Get(int x) là lấy max độ dài các dãy con tăng dài nhất kết thúc tại các giá trị <= x, khởi tạo biến ans = ii(0,0), nếu mà ans.fi < bit[x].fi thì cập nhập ans, còn nếu ans.fi == bit[x].fi thì ans.se += bit[x].se
+
+Cập nhập thì ngược lại.
+
+Kết quả là Get(n-1).
+
+[Code](https://pastebin.com/12FZXUp8)
+
+[Code không AC, áp dụng phương pháp bài INCVN là tìm độ dài của dãy con tăng dài nhất rồi tìm số lượng dãy con tăng có độ dài bằng nó](https://pastebin.com/ZajPaDGB)
