@@ -250,4 +250,30 @@ f[i][j] = max (f[i-h][j-1]) với h = d[j]^k sao cho h <= i.
 
 **46. [HAOI5000](https://vnoi.info/problems/HAOI5000/)**
 
-học tón cái, chiều đi học bù :<
+Bài này sài two pointer, ban đầu ta tính khoảng cách từ máy 1 đến các máy có học sinh khác, gọi biến lưu khoảng cách đó là now, tính thêm số học sinh nằm trong khoảng (1,n/2+1) và lưu vào biến cnt.
+
+Mảng c[i] lưu số lượng học sinh tại máy i.
+
+Giả sử vị trí hiện tại là pos.
+
+Khi dịch qua bên phải 1 đơn vị thì khoảng cách mới sẽ là vị trí (l,r) = (pos+1,n/2+2), ta nhận thấy rằng vị trí tới các máy nằm trong khoảng (l,r-1) sẽ giảm đi 1 đơn vị còn nếu n lẻ thì vị trí vòng cung từ r+1 trở về l-1 sẽ tăng, n chẵn thì vị trí r trở về l-1 tăng.
+
+-> Giả sử vị trí tới k thằng học sinh đều tăng, ta chỉ cần cộng biến now lên k và trừ đi 2 lần số học sinh trong đoạn (l,r-1) và xét thêm số học sinh ở vị trí r trong các trường hợp của n là tính được biến now tại vị trí l.
+
+-> now += k - 2 x (cnt-c[l-1]) - n % 2 x (c[r])
+
+Giải thích ct: do cnt là số lượng học sinh từ đoạn (i, n/2+i) tức là (l,r-1) nên ta trừ đi c[l-1] là ra số lượng học sinh trong đoạn giảm khoảng cách. n % 2 x c[r] là nếu n là số chẵn thì vị trí r tăng nên không cần trừ c[r], còn nếu n lẻ thì vị trí r giữ nguyên khoảng cách nên sẽ trừ đi c[r].
+
+cnt mới sẽ cộng thêm số lượng học sinh ở vị trí r trừ đi số học sinh ở vị trí l-1
+
+Cập nhập biến now và lấy max là kết quả.
+
+**47. [NKTOSS](https://vnoi.info/problems/NKTOSS/)**
+
+bignum nên skip =(
+
+**48. [NTSEQ](https://vnoi.info/problems/NTSEQ/)**
+
+Bài này áp dụng từ bài dãy con tăng độ dài k có thể vét được 61đ :v 
+
+Mai tìm cách làm AC sau
