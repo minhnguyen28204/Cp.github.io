@@ -232,7 +232,13 @@ Y hệt như bài Disney1 nhưng không có trường hợp i và j đến cùng
 
 **45. [CTNOWN](https://vnoi.info/problems/CTNOWN/)**
 
-Bội số chung của một số bằng tích của lũy thừa các số nguyên tố được phân tích từ số đó (chắc là z :v, cấp 2 học r mà quên gần hết)
+Bội số chung nhỏ nhất của một tập số bằng tích của lũy thừa cao nhất của các số nguyên tố khác nhau tạo thành các số trong tập đó. (chắc là z :v, cấp 2 học r mà quên gần hết)
+
+![image](https://user-images.githubusercontent.com/69662229/111722654-81530f00-881f-11eb-8c1f-192a31d3c6e8.png)
+
+Nguồn wiki
+
+-> Phân tích số thành tổng các lũy thừa của số nguyên tố và kiểm tra.
 
 Gọi mảng d[i] chứa các số nguyên tố bé hơn 350.
 
