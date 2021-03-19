@@ -230,7 +230,18 @@ Y hệt như bài Disney1 nhưng không có trường hợp i và j đến cùng
 
 =)) 
 
-**45. [CNTOWN](https://vnoi.info/problems/CTNOWN/)**
+**45. [CTNOWN](https://vnoi.info/problems/CTNOWN/)**
 
-*lại là toán ._.*
+Bội số chung của một số bằng tích của lũy thừa các số nguyên tố được phân tích từ số đó (chắc là z :v, cấp 2 học r mà quên gần hết)
 
+Gọi mảng d[i] chứa các số nguyên tố bé hơn 350.
+
+f[i][j] là bội số chung nhỏ nhất của các số được phân tích từ i sao cho lớn nhất và số cuối có dạng d[j]^k.
+
+f[0][j] = 1, f[i][0] = 1
+
+f[i][j] = max (f[i-h][j-1]) với h = d[j]^k sao cho h <= i.
+
+**46. [HAOI5000](https://vnoi.info/problems/HAOI5000/)**
+
+học tón cái, chiều đi học bù :<
