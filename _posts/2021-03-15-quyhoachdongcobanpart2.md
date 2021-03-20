@@ -304,4 +304,4 @@ Kết quả là max f[i][j].
 
 **50. [IVANA](https://vnoi.info/problems/IVANA/)**
 
-*chắc cày xong bài này qua đồ thị cày, sắp thi khu vực r ;-; *
+*chắc cày xong bài này qua đồ thị cày, sắp thi khu vực r ;-;*
