@@ -289,3 +289,19 @@ Kết quả là Get(n-1).
 [Code](https://pastebin.com/12FZXUp8)
 
 [Code không AC, áp dụng phương pháp bài INCVN là tìm độ dài của dãy con tăng dài nhất rồi tìm số lượng dãy con tăng có độ dài bằng nó](https://pastebin.com/ZajPaDGB)
+
+**49. [LEM5](https://vnoi.info/problems/LEM5/)**
+
+Gọi f[i][j] là độ dài cấp số cộng dài nhất có công sai là d khi xét i phần tử đầu.
+
+Vì a[i] khá lớn ( |a[i]| <= 1e9 ) nên ta cần nén lại dãy số để dễ dàng tính toán, ta thấy công sai d <= 100 nên ta sẽ sort lại dãy ban đầu, kiểm tra nếu a[i+1] lớn hơn a[i] 100 đơn vị thì ta cho a[i+1] = a[i]+101 (a[1] = 0) -> a[i] sẽ tối đa tầm 1e8 và dương.
+
+Sau đó ta chỉ cần sử dụng một mảng đánh dấu g[i] với ý nghĩa là vị trí a[g[i]] = i.
+
+Với mỗi f[i][j], nếu a[i]-j >= 0 và g[a[i]-j] > 0 thì f[i][j] = f[g[a[i]-j]][j] + 1, nếu không thì f[i][j] = 1.
+
+Kết quả là max f[i][j].
+
+**50. [IVANA](https://vnoi.info/problems/IVANA/)**
+
+*chắc cày xong bài này qua đồ thị cày, sắp thi khu vực r ;-; *
