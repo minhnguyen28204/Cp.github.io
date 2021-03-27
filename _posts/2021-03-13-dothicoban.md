@@ -239,3 +239,55 @@ while (q.size())
   }
 }
 ```
+
+## **7. Đường đi Euler**
+
+Một đường đi Euler là một đường đi qua mỗi cạnh của đồ thị đúng một lần duy nhất. Ví dụ đồ thị sau:
+
+![image](https://user-images.githubusercontent.com/69662229/112726303-e53d9d80-8ed9-11eb-9d82-4690313e3f58.png)
+
+Có đường đi Euler từ đỉnh 2 đến đỉnh 5 như sau:
+
+![image](https://user-images.githubusercontent.com/69662229/112726317-fbe3f480-8ed9-11eb-8d53-ae89be336d2a.png)
+
+*Fun fact: Ông Euler phát hiện ra đường đi này vào năm 1736 khi đang giải quyết một bài toán nổi tiếng là bảy cây cầu của Königsberg. Từ đây khai sinh ra lý thuyết đồ thị T.T*
+
+Một chu trình Euler là một đường đi Euler mà xuất phát từ một đỉnh và kết thúc ngay tại đỉnh đó. Ví dụ như đồ thị sau:
+
+![image](https://user-images.githubusercontent.com/69662229/112726409-8af10c80-8eda-11eb-8e31-c5286a9de2c2.png)
+
+có một chu trình Euler từ đỉnh 1.
+
+![image](https://user-images.githubusercontent.com/69662229/112726423-9e03dc80-8eda-11eb-9c00-31f559d9b618.png)
+
+### Khi nào thì có đường đi Euler và chu trình Euler
+
+Đường đi Euler và chu trình Euler xuất hiện dựa vào bậc của các đỉnh. Đầu tiên, một đồ thị vô hướng có đường đi Euler khi và chỉ khi mỗi cạnh đều thuộc cùng một thành phần liên thông và:
+
+- Bậc của mỗi đỉnh là chẵn hoặc
+- Có chính xác hai đỉnh bậc lẻ, các đỉnh còn lại bậc chẵn.
+
+Trong trường hợp đầu tiên, Đường đi Euler cũng chính là chu trình. Trong trường hợp thứ hai, hai đỉnh bậc lẻ là đỉnh xuất phát và đỉnh kết thúc của đường đi Euler.
+
+Ví dụ đồ thị sau:
+
+![image](https://user-images.githubusercontent.com/69662229/112726623-a3155b80-8edb-11eb-8a0e-c802b12acf09.png)
+
+Có đỉnh 1, 3 và 4 bậc là 2, và đỉnh 2, 5 có bậc là 3. Có chính xác hai đỉnh bậc lẻ, nên có một đường đi Euler giữa đỉnh 2 và đỉnh 5, nhưng không có chu trình Euler.
+
+Trong một đồ thị có hướng, chúng ta tập trung vào bậc vào và bậc ra của đỉnh. Một đồ thị có hướng chứa đường đi Euler khi và chỉ khi mọi cạnh thuộc cùng 1 thành phần liên thông và:
+
+- Mỗi đỉnh, bậc vào bằng bậc ra hoặc
+- Có một đỉnh bậc vào lớn hơn bậc ra, đỉnh khác có bậc ra lớn hơn bậc vào, và các đỉnh còn lại có bậc vào bằng với bậc ra.
+
+Trường hợp 1 thì đường đi Euler cũng chính là chu trình Euler, trong trường hợp hai, đồ thị có chứa đường đi Euler từ đỉnh có bậc ra lớn hơn và kết thúc tại đỉnh có bậc vào lớn hơn.
+
+Ví dụ đồ thị sau:
+
+![image](https://user-images.githubusercontent.com/69662229/112726755-4fefd880-8edc-11eb-8595-f167aed125c0.png)
+
+Đỉnh 1, 3 và 4 có bậc vào là 1 và bậc ra là 1, đỉnh 2 có bậc vào là 1 và bậc ra là 2, đỉnh 5 có bậc vào là 2 và bậc ra là 1. Vì thế, có một đường đi Euler từ đỉnh 2 và kết thúc tại đỉnh 5.
+
+![image](https://user-images.githubusercontent.com/69662229/112726808-89284880-8edc-11eb-8f77-c9e31f9442a9.png)
+
+### Thuật toán Hierholzer
