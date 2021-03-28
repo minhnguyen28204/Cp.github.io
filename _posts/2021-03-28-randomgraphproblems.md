@@ -20,6 +20,8 @@ Vì vậy có 3 trường hợp:
 - Độ dài từ a đến x + độ dài từ y đến b + 1 cùng tính chẵn lẻ và <= k thì thỏa mãn
 - Độ dài từ a đến y + độ dài từ x đến b + 1 cùng tính chẵn lẻ và <= k thì thỏa mãn
 
+*Tính độ dài giữa hai đỉnh của một cây bằng LCA*
+
 Nếu không có trường hợp nào thỏa mãn thì in NO.
 
 [Code](https://pastebin.com/8HwYzcfQ)
