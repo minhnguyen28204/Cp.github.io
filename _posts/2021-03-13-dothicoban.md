@@ -290,4 +290,3 @@ Ví dụ đồ thị sau:
 
 ![image](https://user-images.githubusercontent.com/69662229/112726808-89284880-8edc-11eb-8f77-c9e31f9442a9.png)
 
-### Thuật toán Hierholzer
