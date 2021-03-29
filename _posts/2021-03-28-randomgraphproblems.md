@@ -26,3 +26,13 @@ Nếu không có trường hợp nào thỏa mãn thì in NO.
 
 [Code](https://pastebin.com/8HwYzcfQ)
 
+**2. [Sleepy Game](https://codeforces.com/problemset/problem/936/B)**
+
+Bài này yêu cầu tìm một đường đi từ s đến một đỉnh có bậc ra bằng 0, nếu không thì tìm một chu trình.
+
+Gọi vst[i][j] (0 <= j <= 1): vst[i][0] = 1 tức là Petya đã thăm đỉnh i rồi, vst[i][1] = 1 tức là Vasya đã thăm đỉnh i rồi.
+
+Ta sẽ dfs(u,d) với d là số bước đi hiện tại, bắt đầu dfs(s,0), nếu có một đỉnh v sao cho d % 2 != 0 và bậc ra của v bằng 0 thì Petya có thể win. Nếu có đỉnh v sao cho 
+vst[v][1-d%2]=1 tức là gặp được 1 chu trình thì Petya có thể hòa, nếu không Petya thua.
+
+[Code](https://pastebin.com/auhpEKdj)
