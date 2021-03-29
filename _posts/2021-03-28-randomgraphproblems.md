@@ -36,3 +36,5 @@ Ta sẽ dfs(u,d) với d là số bước đi hiện tại, bắt đầu dfs(s,0
 vst[v][1-d%2]=1 tức là gặp được 1 chu trình thì Petya có thể hòa, nếu không Petya thua.
 
 [Code](https://pastebin.com/auhpEKdj)
+
+cày tin nhiều quá lú rồi, qua làm toán xả stress v :(
